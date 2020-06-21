@@ -41,12 +41,13 @@ class ServicediensteConversionTaskTest {
         val project = ProjectBuilder.builder().build()
         sut = project.tasks.create("convertServicedienste", ServicediensteConversionTask::class.java)
         sut.servicediensteService = servicediensteService
+        sut.fs = fs
     }
 
     @Test
     fun `test serialization`() {
-        sut.pdf.set(fs.getPath("Rufnummernliste.pdf"))
-        sut.jsonExportFile.set(fs.getPath("Rufnummernliste.json"))
+        sut.pdf.set("Rufnummernliste.pdf")
+        sut.jsonExportFile.set("Rufnummernliste.json")
 
         sut.convert()
 

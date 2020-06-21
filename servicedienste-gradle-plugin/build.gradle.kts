@@ -12,6 +12,7 @@ plugins {
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.3.70"
+    id("org.jetbrains.dokka") version "0.10.1"
 }
 
 repositories {
@@ -26,6 +27,7 @@ dependencies {
     implementation("org.apache.pdfbox:pdfbox:2.0.20")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.0")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.0")
+    implementation("de.undercouch:gradle-download-task:4.0.4")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.22")

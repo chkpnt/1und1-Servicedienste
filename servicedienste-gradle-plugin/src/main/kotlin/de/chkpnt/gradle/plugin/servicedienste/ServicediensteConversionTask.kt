@@ -2,42 +2,56 @@ package de.chkpnt.gradle.plugin.servicedienste
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import org.gradle.api.DefaultTask
+import org.gradle.api.logging.LogLevel
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.*
-import java.nio.file.Path
-import java.io.File
-import java.nio.file.Files
+import java.net.URL
+import java.nio.file.*
 
 open class ServicediensteConversionTask() : DefaultTask() {
 
-    @InputFile
-    val pdf: Property<Path> = project.objects.property(Path::class.java)
+    @Input
+    val sourceUrl: Property<String> = project.objects.property(String::class.java)
 
-    @OutputFile
-    val jsonExportFile: Property<Path> = project.objects.property(Path::class.java)
+    @Internal
+    val pdf: Property<String> = project.objects.property(String::class.java)
+
+    val pdfPath: Path
+        @InputFile
+        get() = fs.getPath(pdf.get())
+
+    @Internal
+    val jsonExportFile: Property<String> = project.objects.property(String::class.java)
+
+    val jsonExportFilePath: Path
+        @OutputFile
+        get() = fs.getPath(jsonExportFile.get())
 
     @Internal
     var servicediensteService: ServicediensteService = DefaultServicediensteService()
 
     @Internal
-    val mapper: ObjectMapper = ObjectMapper().findAndRegisterModules()
+    var fs: FileSystem = FileSystems.getDefault()
+
+    private val mapper: ObjectMapper = ObjectMapper()
+            .registerModule(JavaTimeModule())
             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
 
     @Console
     override fun getDescription(): String {
-        val inputDirName = project.projectDir
-                .toPath()
-                //.relativize(inputDir.get())
-                .toString()
-        return "Adds all certificates found under '$inputDirName' to the TrustStore."
+        val url = URL(sourceUrl.get())
+        val fileNameFromUrl = Paths.get(url.path).fileName
+        return "Generate ${jsonExportFilePath} based on '${fileNameFromUrl}' from ${url.host}"
     }
 
     @TaskAction
     fun convert() {
-        val servicedienste = servicediensteService.loadPdf(pdf.get());
+        val servicedienste = servicediensteService.loadPdf(pdfPath);
         val jsonExport = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
-        Files.write(jsonExportFile.get(), jsonExport.toByteArray() )
+        Files.write(jsonExportFilePath, jsonExport.toByteArray())
+        project.logger.log(LogLevel.QUIET, "Generated $jsonExportFilePath")
     }
 
 }
