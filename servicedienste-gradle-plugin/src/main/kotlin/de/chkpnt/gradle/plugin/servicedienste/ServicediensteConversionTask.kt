@@ -9,6 +9,8 @@ import org.gradle.api.provider.Property
 import org.gradle.api.tasks.*
 import java.net.URL
 import java.nio.file.*
+import java.security.MessageDigest
+
 
 open class ServicediensteConversionTask() : DefaultTask() {
 
@@ -48,10 +50,12 @@ open class ServicediensteConversionTask() : DefaultTask() {
 
     @TaskAction
     fun convert() {
-        val servicedienste = servicediensteService.loadPdf(pdfPath)
+        var servicedienste = servicediensteService.loadPdf(pdfPath)
         if (servicedienste.phoneNumbers.isEmpty()) {
             throw TaskExecutionException(this, IllegalArgumentException("Failed to extract phone numbers from $pdfPath"))
         }
+        servicedienste.sourceUrl = sourceUrl.get()
+        servicedienste.sourceSha256 = pdfPath.sha256()
 
         val jsonExport = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
         Files.write(jsonExportFilePath, jsonExport.toByteArray())
@@ -59,3 +63,12 @@ open class ServicediensteConversionTask() : DefaultTask() {
     }
 
 }
+
+private fun Path.sha256(): String {
+    val digest = MessageDigest.getInstance("SHA-256")
+    val bytes = Files.readAllBytes(this)
+    val hash = digest.digest(bytes)
+    return hash.toHexString()
+}
+
+private fun ByteArray.toHexString() = joinToString("") { "%02x".format(it) }

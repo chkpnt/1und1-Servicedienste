@@ -24,7 +24,7 @@ class ServicediensteConversionTaskTest {
 
     private val servicedienste = Servicedienste(
             sourceUrl = "https://1und1.de/Rufnummernliste.pdf",
-            sourceSha256 = "hash",
+            sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
             asOfDate = LocalDate.parse("2020-04-01"),
             phoneNumbers = listOf(
                     Servicedienst(phoneNumber = "040808081", chargedFrom = LocalDate.parse("2011-05-04")),
@@ -34,7 +34,7 @@ class ServicediensteConversionTaskTest {
 
     private val emptyServicedienste = Servicedienste(
             sourceUrl = "https://1und1.de/Rufnummernliste.pdf",
-            sourceSha256 = "hash",
+            sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
             asOfDate = null,
             phoneNumbers = emptyList()
     )
@@ -42,6 +42,7 @@ class ServicediensteConversionTaskTest {
     @BeforeEach
     fun setup() {
         fs = Jimfs.newFileSystem(Configuration.unix())
+        Files.write(fs.getPath("Rufnummernliste.pdf"), byteArrayOf(0x11, 0x22, 0x33))
 
         servicediensteService = mockk<ServicediensteService>()
         every { servicediensteService.loadPdf(any()) } returns servicedienste
@@ -56,6 +57,7 @@ class ServicediensteConversionTaskTest {
     fun `test serialization`() {
         sut.pdf.set("Rufnummernliste.pdf")
         sut.jsonExportFile.set("Rufnummernliste.json")
+        sut.sourceUrl.set("https://1und1.de/Rufnummernliste.pdf")
 
         sut.convert()
 
@@ -65,7 +67,7 @@ class ServicediensteConversionTaskTest {
         assertThat(actualJson).isEqualTo("""
             {
               "sourceUrl" : "https://1und1.de/Rufnummernliste.pdf",
-              "sourceSha256" : "hash",
+              "sourceSha256" : "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
               "asOfDate" : "2020-04-01",
               "phoneNumbers" : [ {
                 "phoneNumber" : "040808081",
@@ -83,6 +85,7 @@ class ServicediensteConversionTaskTest {
         every { servicediensteService.loadPdf(any()) } returns emptyServicedienste
         sut.pdf.set("Rufnummernliste.pdf")
         sut.jsonExportFile.set("Rufnummernliste.json")
+        sut.sourceUrl.set("https://1und1.de/Rufnummernliste.pdf")
 
         val exception = assertThrows(TaskExecutionException::class.java) {
             sut.convert()
