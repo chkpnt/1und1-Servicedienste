@@ -1,0 +1,23 @@
+name: servicedienste-gradle-plugin
+
+on: push
+
+defaults:
+  run:
+    working-directory: servicedienste-gradle-plugin
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Java environment
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Run checks
+        run: ./gradlew check
+      - name: SonarQube analysis
+        env:
+          SONARQUBE_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+        run: ./gradlew sonarqube

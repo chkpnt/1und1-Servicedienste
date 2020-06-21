@@ -1,10 +1,10 @@
 plugins {
-    // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
+    jacoco
 
-    // Apply the Kotlin JVM plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.3.70"
     id("com.diffplug.gradle.spotless") version "4.4.0"
+    id("org.sonarqube") version "3.0"
 }
 
 repositories {
@@ -42,10 +42,27 @@ spotless {
     }
 }
 
+sonarqube {
+    properties {
+        property("sonar.host.url", "https://sonar.chkpnt.de")
+        property("sonar.login", System.getenv("SONARQUBE_TOKEN"))
+        property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
+        property("sonar.jacoco.reportPath", "")
+    }
+}
+
 tasks {
 
     test {
         useJUnitPlatform()
+        finalizedBy(jacocoTestReport)
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.isEnabled = true
+            html.isEnabled = true
+        }
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {

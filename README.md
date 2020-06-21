@@ -1,5 +1,9 @@
 # 1&1 Servicedienste
 
+[![License](https://img.shields.io/github/license/chkpnt/1und1-Servicedienste.svg?label=License)](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) 
+[![servicedienste-gradle-plugin](https://github.com/chkpnt/1und1-Servicedienste/workflows/servicedienste-gradle-plugin/badge.svg)](https://github.com/chkpnt/1und1-Servicedienste/actions?query=workflow%3Aservicedienste-gradle-plugin)
+[![SonarQube](https://img.shields.io/badge/SonarQube-sonar.chkpnt.de-blue.svg)](https://sonar.chkpnt.de/dashboard?id=de.chkpnt%3Aservicedienste-gradle-plugin&did=1)
+
 Although your 1&1 DSL or mobile phone contract includes a telephone flat rate, which allows you to make free calls
 to the German fixed network, you [will be charged](https://hilfe-center.1und1.de/rechnung-c85326/rechnungspositionen-c85331/berechnung-von-service--und-konferenzdiensten-a793873.html)
 if you call a number listed in special exclusion list.
