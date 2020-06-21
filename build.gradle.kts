@@ -21,6 +21,8 @@ gitPublish {
     commitMessage.set("Update 1&1 Servicedienste")
     preserve { include("**/*") }
     contents {
-        from("servicedienste-*.json")
+        from(".") {
+            include("servicedienste-*.json")
+        }
     }
 }
