@@ -20,13 +20,6 @@ class ServicedienstePlugin: Plugin<Project> {
                 .create(SERVICEDIENSTE_EXTENSION_NAME, ServicediensteExtension::class.java, project)
 
         project.tasks.register(SERVICEDIENSTE_CONVERSION_TASK_NAME, ServicediensteConversionTask::class.java)
-
-        // Register a task
-        project.tasks.register("greeting") { task ->
-            task.doLast {
-                println("Hello from plugin 'de.chkpnt.gradle.plugin.servicedienste.greeting'")
-            }
-        }
     }
 
     companion object {
