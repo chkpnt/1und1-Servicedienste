@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "^org.jetbrains.kotlin"
+      ],
+      "groupName": "Kotlin packages"
+    }
+  ]
+}
