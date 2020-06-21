@@ -48,7 +48,11 @@ open class ServicediensteConversionTask() : DefaultTask() {
 
     @TaskAction
     fun convert() {
-        val servicedienste = servicediensteService.loadPdf(pdfPath);
+        val servicedienste = servicediensteService.loadPdf(pdfPath)
+        if (servicedienste.phoneNumbers.isEmpty()) {
+            throw TaskExecutionException(this, IllegalArgumentException("Failed to extract phone numbers from $pdfPath"))
+        }
+
         val jsonExport = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
         Files.write(jsonExportFilePath, jsonExport.toByteArray())
         project.logger.log(LogLevel.QUIET, "Generated $jsonExportFilePath")

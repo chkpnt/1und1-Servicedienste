@@ -18,7 +18,7 @@ class ServicediensteServiceTest {
     }
 
     @Test
-    fun bla() {
+    fun `test loadPdf`() {
         val pdfFile = Paths.get(javaClass.classLoader.getResource("Rufnummernliste.pdf").file)
 
         val servicedienste = sut.loadPdf(pdfFile)
@@ -28,5 +28,5 @@ class ServicediensteServiceTest {
         assertThat(servicedienste.phoneNumbers.first()).isEqualTo(Servicedienst("020125879359", LocalDate.parse("2012-09-27")))
         assertThat(servicedienste.phoneNumbers.last()).isEqualTo(Servicedienst("097793273030", LocalDate.parse("2014-03-28")))
     }
-
+    
 }
