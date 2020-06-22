@@ -28,5 +28,5 @@ data class Servicedienste(
 
 data class Servicedienst(
     val phoneNumber: String,
-    val chargedFrom: LocalDate
+    val chargedSince: LocalDate
 )

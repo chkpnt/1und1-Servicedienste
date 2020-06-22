@@ -43,8 +43,8 @@ class ServicediensteConversionTaskTest {
             sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
             asOfDate = LocalDate.parse("2020-04-01"),
             phoneNumbers = listOf(
-                    Servicedienst(phoneNumber = "040808081", chargedFrom = LocalDate.parse("2011-05-04")),
-                    Servicedienst(phoneNumber = "0694005900", chargedFrom = LocalDate.parse("2011-05-04"))
+                    Servicedienst(phoneNumber = "040808081", chargedSince = LocalDate.parse("2011-05-04")),
+                    Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"))
             )
     )
 
@@ -87,10 +87,10 @@ class ServicediensteConversionTaskTest {
               "asOfDate" : "2020-04-01",
               "phoneNumbers" : [ {
                 "phoneNumber" : "040808081",
-                "chargedFrom" : "2011-05-04"
+                "chargedSince" : "2011-05-04"
               }, {
                 "phoneNumber" : "0694005900",
-                "chargedFrom" : "2011-05-04"
+                "chargedSince" : "2011-05-04"
               } ]
             }
         """.trimIndent())
