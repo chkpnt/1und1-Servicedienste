@@ -42,19 +42,11 @@ open class ServicediensteConversionTask() : DefaultTask() {
     @Input
     val sourceUrl: Property<String> = project.objects.property(String::class.java)
 
-    @Internal
-    val pdf: Property<String> = project.objects.property(String::class.java)
+    @InputFile
+    val pdf: Property<Path> = project.objects.property(Path::class.java)
 
-    val pdfPath: Path
-        @InputFile
-        get() = fs.getPath(pdf.get())
-
-    @Internal
-    val jsonExportFile: Property<String> = project.objects.property(String::class.java)
-
-    val jsonExportFilePath: Path
-        @OutputFile
-        get() = fs.getPath(jsonExportFile.get())
+    @OutputFile
+    val jsonExportFile: Property<Path> = project.objects.property(Path::class.java)
 
     @Input
     val fritzboxPhonebookName: Property<String> = project.objects.property(String::class.java)
@@ -62,12 +54,8 @@ open class ServicediensteConversionTask() : DefaultTask() {
     @Input
     val fritzboxPhonebookStartingContactId: Property<Int> = project.objects.property(Int::class.java)
 
-    @Internal
-    val fritzboxPhonebookFile: Property<String> = project.objects.property(String::class.java)
-
-    val fritzboxPhonebookFilePath: Path
-        @OutputFile
-        get() = fs.getPath(fritzboxPhonebookFile.get())
+    @OutputFile
+    val fritzboxPhonebookFile: Property<Path> = project.objects.property(Path::class.java)
 
     @Internal
     var servicediensteService: ServicediensteService = DefaultServicediensteService()
@@ -86,11 +74,12 @@ open class ServicediensteConversionTask() : DefaultTask() {
     override fun getDescription(): String {
         val url = URL(sourceUrl.get())
         val fileNameFromUrl = Paths.get(url.path).fileName
-        return "Generate $jsonExportFilePath based on '$fileNameFromUrl' from ${url.host}"
+        return "Generate $jsonExportFile based on '$fileNameFromUrl' from ${url.host}"
     }
 
     @TaskAction
     fun convert() {
+        val pdfPath = pdf.get()
         var servicedienste = servicediensteService.loadPdf(pdfPath)
         if (servicedienste.phoneNumbers.isEmpty()) {
             throw TaskExecutionException(
@@ -102,16 +91,16 @@ open class ServicediensteConversionTask() : DefaultTask() {
         servicedienste.sourceSha256 = pdfPath.sha256()
 
         val jsonExport = jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
-        Files.write(jsonExportFilePath, jsonExport.toByteArray())
-        project.logger.log(LogLevel.QUIET, "Generated $jsonExportFilePath")
+        Files.write(jsonExportFile.get(), jsonExport.toByteArray())
+        project.logger.log(LogLevel.QUIET, "Generated ${jsonExportFile.get()}")
 
         val fritzboxPhonebook = toFritzboxPhonebookConverter.convert(
             servicedienste,
             fritzboxPhonebookName.get(),
             fritzboxPhonebookStartingContactId.get()
         )
-        Files.write(fritzboxPhonebookFilePath, fritzboxPhonebook.toByteArray())
-        project.logger.log(LogLevel.QUIET, "Generated $fritzboxPhonebookFilePath")
+        Files.write(fritzboxPhonebookFile.get(), fritzboxPhonebook.toByteArray())
+        project.logger.log(LogLevel.QUIET, "Generated ${fritzboxPhonebookFile.get()}")
     }
 }
 

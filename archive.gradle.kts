@@ -11,8 +11,5 @@ gitPublish {
     preserve { include("**/*") }
     contents {
         from("build/1und1/")
-        from(".") {
-            include("servicedienste-*.json")
-        }
     }
 }

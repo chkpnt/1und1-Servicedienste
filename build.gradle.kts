@@ -5,7 +5,7 @@ plugins {
 
 servicediensteDsl {
     sourceUrl("https://hilfe-center.1und1.de/bin_dea/article/793873/DSL_Rufnummernliste_Service_und_Konferenzdienste.pdf")
-    downloadTo("build/1und1/DSL_Rufnummernliste_Service_und_Konferenzdienste.pdf")
+    downloadTo("DSL_Rufnummernliste_Service_und_Konferenzdienste.pdf")
     jsonExportFile("1und1-Servicedienste-DSL.json")
 
     fritzboxPhonebookName("1&1 Servicedienste (DSL)")
@@ -14,7 +14,7 @@ servicediensteDsl {
 
 servicediensteMobilfunk {
     sourceUrl("https://hilfe-center.1und1.de/bin_dea/article/793873/Mobile_Rufnummernliste_Service_und_Konferenzdienste.pdf")
-    downloadTo("build/1und1/Mobile_Rufnummernliste_Service_und_Konferenzdienste.pdf")
+    downloadTo("Mobile_Rufnummernliste_Service_und_Konferenzdienste.pdf")
     jsonExportFile("1und1-Servicedienste-Mobilfunk.json")
 
     fritzboxPhonebookName("1&1 Servicedienste (Mobilfunk)")
@@ -27,7 +27,7 @@ gitPublish {
     commitMessage.set("Update 1&1 Servicedienste")
     preserve { include("**/*") }
     contents {
-        from(".") {
+        from("$buildDir/1und1/") {
             include("1und1-Servicedienste-*.json")
             include("1und1-Servicedienste-*.xml")
         }

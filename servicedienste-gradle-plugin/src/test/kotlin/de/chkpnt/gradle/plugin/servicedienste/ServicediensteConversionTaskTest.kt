@@ -71,11 +71,11 @@ class ServicediensteConversionTaskTest {
 
     @Test
     fun `test serialization`() {
-        sut.pdf.set("Rufnummernliste.pdf")
-        sut.jsonExportFile.set("Rufnummernliste.json")
+        sut.pdf.set(fs.getPath("Rufnummernliste.pdf"))
+        sut.jsonExportFile.set(fs.getPath("Rufnummernliste.json"))
         sut.fritzboxPhonebookName.set("1&1 Servicedienste")
         sut.fritzboxPhonebookStartingContactId.set(10001)
-        sut.fritzboxPhonebookFile.set("Phonebook.xml")
+        sut.fritzboxPhonebookFile.set(fs.getPath("Phonebook.xml"))
         sut.sourceUrl.set("https://1und1.de/Rufnummernliste.pdf")
 
         sut.convert()
@@ -142,8 +142,8 @@ class ServicediensteConversionTaskTest {
     @Test
     fun `if no phoneNumbers can be extracted an exception is thrown`() {
         every { servicediensteService.loadPdf(any()) } returns emptyServicedienste
-        sut.pdf.set("Rufnummernliste.pdf")
-        sut.jsonExportFile.set("Rufnummernliste.json")
+        sut.pdf.set(fs.getPath("Rufnummernliste.pdf"))
+        sut.jsonExportFile.set(fs.getPath("Rufnummernliste.json"))
         sut.sourceUrl.set("https://1und1.de/Rufnummernliste.pdf")
 
         val exception = assertThrows(TaskExecutionException::class.java) {

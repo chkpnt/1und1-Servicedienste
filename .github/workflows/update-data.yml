@@ -37,5 +37,5 @@ jobs:
       - uses: webfactory/ssh-agent@ignore-kill-agent-failure
         with:
           ssh-private-key: ${{ secrets.WORKFLOW_SSH_KEY_ARCHIV_REPO }}
-      - name: Archive the PDFs in a private repo
+      - name: Archive the PDFs and build artifacts in a private repo
         run: ./gradlew -b archive.gradle.kts gitPublishPush --info

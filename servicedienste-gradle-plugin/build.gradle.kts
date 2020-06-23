@@ -38,6 +38,7 @@ gradlePlugin {
 }
 
 spotless {
+    isEnforceCheck = false
     kotlin {
         ktlint()
         licenseHeaderFile("gradle/formatter/spotless.license.txt")

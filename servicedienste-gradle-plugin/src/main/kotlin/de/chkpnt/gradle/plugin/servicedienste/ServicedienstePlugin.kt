@@ -30,14 +30,14 @@ class ServicedienstePlugin : Plugin<Project> {
 
         // DSL
         val extensionDsl = project.extensions
-            .create(EXTENSION_NAME_SERVICEDIENSTE_DSL, ServicediensteExtension::class.java, project.objects)
+            .create(EXTENSION_NAME_SERVICEDIENSTE_DSL, ServicediensteExtension::class.java, project)
         val downloadDslPdfTask = registerDownloadTask(project, TASK_NAME_DOWNLOAD_DSL_PDF, extensionDsl)
         val convertDslTask = registerConvertTask(project, TASK_NAME_CONVERT_DSL, extensionDsl)
         convertDslTask.configure { it.dependsOn(downloadDslPdfTask) }
 
         // Mobilfunk
         val extensionMobilfunk = project.extensions
-            .create(EXTENSION_NAME_SERVICEDIENSTE_MOBILFUNK, ServicediensteExtension::class.java, project.objects)
+            .create(EXTENSION_NAME_SERVICEDIENSTE_MOBILFUNK, ServicediensteExtension::class.java, project)
         val downloadDslMobilfunkTask =
             registerDownloadTask(project, TASK_NAME_DOWNLOAD_MOBILFUNK_PDF, extensionMobilfunk)
         val convertMobilfunkTask = registerConvertTask(project, TASK_NAME_CONVERT_MOBILFUNK, extensionMobilfunk)
@@ -60,7 +60,7 @@ class ServicedienstePlugin : Plugin<Project> {
             task.group = GROUP_NAME_DOWNLOADS
 
             task.src(extension.sourceUrl)
-            task.dest(extension.downloadTo)
+            task.dest(extension.downloadToFile)
             task.onlyIfModified(true)
         }
     }
