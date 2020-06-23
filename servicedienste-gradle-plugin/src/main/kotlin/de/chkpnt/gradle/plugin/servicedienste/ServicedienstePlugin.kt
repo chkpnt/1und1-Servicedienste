@@ -26,19 +26,20 @@ class ServicedienstePlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         project.pluginManager
-                .apply(BasePlugin::class.java)
+            .apply(BasePlugin::class.java)
 
         // DSL
         val extensionDsl = project.extensions
-                .create(EXTENSION_NAME_SERVICEDIENSTE_DSL, ServicediensteExtension::class.java, project)
+            .create(EXTENSION_NAME_SERVICEDIENSTE_DSL, ServicediensteExtension::class.java, project)
         val downloadDslPdfTask = registerDownloadTask(project, TASK_NAME_DOWNLOAD_DSL_PDF, extensionDsl)
         val convertDslTask = registerConvertTask(project, TASK_NAME_CONVERT_DSL, extensionDsl)
         convertDslTask.configure { it.dependsOn(downloadDslPdfTask) }
 
         // Mobilfunk
         val extensionMobilfunk = project.extensions
-                .create(EXTENSION_NAME_SERVICEDIENSTE_MOBILFUNK, ServicediensteExtension::class.java, project)
-        val downloadDslMobilfunkTask = registerDownloadTask(project, TASK_NAME_DOWNLOAD_MOBILFUNK_PDF, extensionMobilfunk)
+            .create(EXTENSION_NAME_SERVICEDIENSTE_MOBILFUNK, ServicediensteExtension::class.java, project)
+        val downloadDslMobilfunkTask =
+            registerDownloadTask(project, TASK_NAME_DOWNLOAD_MOBILFUNK_PDF, extensionMobilfunk)
         val convertMobilfunkTask = registerConvertTask(project, TASK_NAME_CONVERT_MOBILFUNK, extensionMobilfunk)
         convertMobilfunkTask.configure { it.dependsOn(downloadDslMobilfunkTask) }
 
@@ -50,7 +51,11 @@ class ServicedienstePlugin : Plugin<Project> {
         }
     }
 
-    private fun registerDownloadTask(project: Project, taskName: String, extension: ServicediensteExtension): TaskProvider<Download> {
+    private fun registerDownloadTask(
+        project: Project,
+        taskName: String,
+        extension: ServicediensteExtension
+    ): TaskProvider<Download> {
         return project.tasks.register(taskName, Download::class.java) { task ->
             task.group = GROUP_NAME_DOWNLOADS
 
@@ -60,13 +65,22 @@ class ServicedienstePlugin : Plugin<Project> {
         }
     }
 
-    private fun registerConvertTask(project: Project, taskName: String, extension: ServicediensteExtension): TaskProvider<ServicediensteConversionTask> {
+    private val fritzboxPhonebookStartingContactIds = listOf(10001, 20001).iterator()
+
+    fun registerConvertTask(
+        project: Project,
+        taskName: String,
+        extension: ServicediensteExtension
+    ): TaskProvider<ServicediensteConversionTask> {
         return project.tasks.register(taskName, ServicediensteConversionTask::class.java) { task ->
             task.group = GROUP_NAME_CONVERSION
 
             task.sourceUrl.set(extension.sourceUrl)
             task.pdf.set(extension.downloadTo)
             task.jsonExportFile.set(extension.jsonExportFile)
+            task.fritzboxPhonebookName.set(extension.fritzboxPhonebookName)
+            task.fritzboxPhonebookStartingContactId.set(fritzboxPhonebookStartingContactIds.next())
+            task.fritzboxPhonebookFile.set(extension.fritzboxPhonebookFile)
         }
     }
 

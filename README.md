@@ -8,9 +8,9 @@
 
 Although your 1&1 DSL or mobile phone contract includes a telephone flat rate, which allows you to make free calls
 to the German fixed network, you [will be charged](https://hilfe-center.1und1.de/rechnung-c85326/rechnungspositionen-c85331/berechnung-von-service--und-konferenzdiensten-a793873.html)
-if you call a number listed in special exclusion list.
+if you call a number listed in a special exclusion list.
 
-Unfortunately, those lists are only available as PDFs:
+Unfortunately, these lists are only available as PDFs:
 * [Rufnummernliste Service- und Konferenzdienste für DSL-Verträge](https://hilfe-center.1und1.de/bin_dea/article/793873/DSL_Rufnummernliste_Service_und_Konferenzdienste.pdf)
 * [Rufnummernliste Service- und Konferenzdienste für Mobilfunkverträge](https://hilfe-center.1und1.de/bin_dea/article/793873/Mobile_Rufnummernliste_Service_und_Konferenzdienste.pdf)
 
@@ -18,7 +18,17 @@ Therefore, this repository exists to provide machine-readable versions of these 
 * [servicedienste-dsl.json](servicedienste-dsl.json)
 * [servicedienste-mobilfunk.json](servicedienste-mobilfunk.json)
 
-They are updated automatically.
+All files are updated automatically.
+
+## FRITZ!Box Phonebooks 
+
+Phonebook-XMLs are generated, too:
+* [1und1-Servicedienste-DSL-FritzBox-Phonebook.xml](1und1-Servicedienste-DSL-FritzBox-Phonebook.xml)
+* [1und1-Servicedienste-Mobilfunk-FritzBox-Phonebook.xml](1und1-Servicedienste-Mobilfunk-FritzBox-Phonebook.xml)
+
+Unfortunately, they are rather useless for two reasons:
+1. The Phonebook-XMLs contains too many contacts. For example on a FRITZ!Box 7590, a phonebook can contain at most 2000 entries.
+1. Even if you could import the XML: A phonebook can only be used to block incoming calls, but not outgoing call.
 
 ## License
 

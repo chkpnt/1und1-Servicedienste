@@ -56,15 +56,31 @@ open class ServicediensteConversionTask() : DefaultTask() {
         @OutputFile
         get() = fs.getPath(jsonExportFile.get())
 
+    @Input
+    val fritzboxPhonebookName: Property<String> = project.objects.property(String::class.java)
+
+    @Input
+    val fritzboxPhonebookStartingContactId: Property<Int> = project.objects.property(Int::class.java)
+
+    @Internal
+    val fritzboxPhonebookFile: Property<String> = project.objects.property(String::class.java)
+
+    val fritzboxPhonebookFilePath: Path
+        @OutputFile
+        get() = fs.getPath(fritzboxPhonebookFile.get())
+
     @Internal
     var servicediensteService: ServicediensteService = DefaultServicediensteService()
 
     @Internal
+    var toFritzboxPhonebookConverter: ToFritzboxPhonebookConverter = ToFritzboxPhonebookConverter()
+
+    @Internal
     var fs: FileSystem = FileSystems.getDefault()
 
-    private val mapper: ObjectMapper = ObjectMapper()
-            .registerModule(JavaTimeModule())
-            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
+    private val jsonMapper: ObjectMapper = ObjectMapper()
+        .registerModule(JavaTimeModule())
+        .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
 
     @Console
     override fun getDescription(): String {
@@ -77,14 +93,25 @@ open class ServicediensteConversionTask() : DefaultTask() {
     fun convert() {
         var servicedienste = servicediensteService.loadPdf(pdfPath)
         if (servicedienste.phoneNumbers.isEmpty()) {
-            throw TaskExecutionException(this, IllegalArgumentException("Failed to extract phone numbers from $pdfPath"))
+            throw TaskExecutionException(
+                this,
+                IllegalArgumentException("Failed to extract phone numbers from $pdfPath")
+            )
         }
         servicedienste.sourceUrl = sourceUrl.get()
         servicedienste.sourceSha256 = pdfPath.sha256()
 
-        val jsonExport = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
+        val jsonExport = jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
         Files.write(jsonExportFilePath, jsonExport.toByteArray())
         project.logger.log(LogLevel.QUIET, "Generated $jsonExportFilePath")
+
+        val fritzboxPhonebook = toFritzboxPhonebookConverter.convert(
+            servicedienste,
+            fritzboxPhonebookName.get(),
+            fritzboxPhonebookStartingContactId.get()
+        )
+        Files.write(fritzboxPhonebookFilePath, fritzboxPhonebook.toByteArray())
+        project.logger.log(LogLevel.QUIET, "Generated $fritzboxPhonebookFilePath")
     }
 }
 

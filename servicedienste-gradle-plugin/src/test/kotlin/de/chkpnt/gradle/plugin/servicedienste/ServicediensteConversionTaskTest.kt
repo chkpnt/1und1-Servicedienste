@@ -39,20 +39,20 @@ class ServicediensteConversionTaskTest {
     private lateinit var servicediensteService: ServicediensteService
 
     private val servicedienste = Servicedienste(
-            sourceUrl = "https://1und1.de/Rufnummernliste.pdf",
-            sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
-            asOfDate = LocalDate.parse("2020-04-01"),
-            phoneNumbers = listOf(
-                    Servicedienst(phoneNumber = "040808081", chargedSince = LocalDate.parse("2011-05-04")),
-                    Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"))
-            )
+        sourceUrl = "https://1und1.de/Rufnummernliste.pdf",
+        sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
+        asOfDate = LocalDate.parse("2020-04-01"),
+        phoneNumbers = listOf(
+            Servicedienst(phoneNumber = "040808081", chargedSince = LocalDate.parse("2011-05-04")),
+            Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"))
+        )
     )
 
     private val emptyServicedienste = Servicedienste(
-            sourceUrl = "https://1und1.de/Rufnummernliste.pdf",
-            sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
-            asOfDate = null,
-            phoneNumbers = emptyList()
+        sourceUrl = "https://1und1.de/Rufnummernliste.pdf",
+        sourceSha256 = "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
+        asOfDate = null,
+        phoneNumbers = emptyList()
     )
 
     @BeforeEach
@@ -73,6 +73,9 @@ class ServicediensteConversionTaskTest {
     fun `test serialization`() {
         sut.pdf.set("Rufnummernliste.pdf")
         sut.jsonExportFile.set("Rufnummernliste.json")
+        sut.fritzboxPhonebookName.set("1&1 Servicedienste")
+        sut.fritzboxPhonebookStartingContactId.set(10001)
+        sut.fritzboxPhonebookFile.set("Phonebook.xml")
         sut.sourceUrl.set("https://1und1.de/Rufnummernliste.pdf")
 
         sut.convert()
@@ -80,7 +83,8 @@ class ServicediensteConversionTaskTest {
         verify { servicediensteService.loadPdf(fs.getPath("Rufnummernliste.pdf")) }
 
         val actualJson = String(Files.readAllBytes(fs.getPath("Rufnummernliste.json")))
-        assertThat(actualJson).isEqualTo("""
+        assertThat(actualJson).isEqualTo(
+            """
             {
               "sourceUrl" : "https://1und1.de/Rufnummernliste.pdf",
               "sourceSha256" : "49ee2bf93aac3b1fb4117e59095e07abe555c3383b38d608da37680a406096e8",
@@ -93,7 +97,46 @@ class ServicediensteConversionTaskTest {
                 "chargedSince" : "2011-05-04"
               } ]
             }
-        """.trimIndent())
+            """.trimIndent()
+        )
+
+        val actualPhonebook = String(Files.readAllBytes(fs.getPath("Phonebook.xml")))
+        assertThat(actualPhonebook).isEqualTo(
+            """
+            <phonebooks>
+                <phonebook owner="0" name="1&amp;1 Servicedienste">
+                    <contact>
+                        <category>0</category>
+                        <person>
+                            <realName>040808081</realName>
+                        </person>
+                        <telephony nid="1">
+                            <number type="work" prio="1" id="0">040808081</number>
+                        </telephony>
+                        <services/>
+                        <setup/>
+                        <features doorphone="0"/>
+                        <mod_time>1304460000</mod_time>
+                        <uniqueid>10001</uniqueid>
+                    </contact>
+                    <contact>
+                        <category>0</category>
+                        <person>
+                            <realName>0694005900</realName>
+                        </person>
+                        <telephony nid="1">
+                            <number type="work" prio="1" id="0">0694005900</number>
+                        </telephony>
+                        <services/>
+                        <setup/>
+                        <features doorphone="0"/>
+                        <mod_time>1304460000</mod_time>
+                        <uniqueid>10002</uniqueid>
+                    </contact>
+                </phonebook>
+            </phonebooks>
+            """.trimIndent()
+        )
     }
 
     @Test

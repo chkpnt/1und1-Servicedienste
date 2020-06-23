@@ -17,8 +17,10 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.apache.pdfbox:pdfbox:2.0.20")
+    implementation("org.apache.commons:commons-text:1.8")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.0")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.0")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.11.0")
     implementation("de.undercouch:gradle-download-task:4.0.4")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
@@ -66,7 +68,7 @@ tasks {
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "11"
     }
 }
 
