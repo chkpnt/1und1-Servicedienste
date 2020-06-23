@@ -2,6 +2,8 @@ name: auto-updating data
 
 on:
   push:
+    branches:
+      - master
   schedule:
     - cron: "0 18 * * *"
 
@@ -25,16 +27,15 @@ jobs:
           git config --global user.name "chkpnt CI"
           git config --global user.email "chkpnt-ci@chkpnt.de"
 
-      - uses: webfactory/ssh-agent@v0.3.0
+      - uses: webfactory/ssh-agent@ignore-kill-agent-failure
         with:
           ssh-private-key: ${{ secrets.WORKFLOW_SSH_KEY }}
-        continue-on-error: true
       - name: Push data, if there are any changes
         run: ./gradlew gitPublishPush --info
+      - run: kill $SSH_AGENT_PID
 
-      - uses: webfactory/ssh-agent@v0.3.0
+      - uses: webfactory/ssh-agent@ignore-kill-agent-failure
         with:
           ssh-private-key: ${{ secrets.WORKFLOW_SSH_KEY_ARCHIV_REPO }}
-        continue-on-error: true
       - name: Archive the PDFs in a private repo
         run: ./gradlew -b archive.gradle.kts gitPublishPush --info
