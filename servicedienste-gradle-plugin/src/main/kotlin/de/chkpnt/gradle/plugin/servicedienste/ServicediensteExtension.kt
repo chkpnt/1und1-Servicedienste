@@ -16,15 +16,20 @@
 
 package de.chkpnt.gradle.plugin.servicedienste
 
-import org.gradle.api.Project
+import org.gradle.api.model.ObjectFactory
+import org.gradle.api.provider.Property
 
-open class ServicediensteExtension(project: Project) {
+open class ServicediensteExtension(objects: ObjectFactory) {
 
-    var sourceUrl: String? = null
-    var downloadTo: String? = null
+    internal val sourceUrl: Property<String> = objects.property(String::class.java)
+    internal val downloadTo: Property<String> = objects.property(String::class.java)
+    internal val jsonExportFile: Property<String> = objects.property(String::class.java)
+    internal val fritzboxPhonebookName: Property<String> = objects.property(String::class.java)
+    internal val fritzboxPhonebookFile: Property<String> = objects.property(String::class.java)
 
-    var jsonExportFile: String? = null
-
-    var fritzboxPhonebookName: String? = null
-    var fritzboxPhonebookFile: String? = null
+    fun sourceUrl(value: String) = sourceUrl.set(value)
+    fun downloadTo(value: String) = downloadTo.set(value)
+    fun jsonExportFile(value: String) = jsonExportFile.set(value)
+    fun fritzboxPhonebookName(value: String) = fritzboxPhonebookName.set(value)
+    fun fritzboxPhonebookFile(value: String) = fritzboxPhonebookFile.set(value)
 }
