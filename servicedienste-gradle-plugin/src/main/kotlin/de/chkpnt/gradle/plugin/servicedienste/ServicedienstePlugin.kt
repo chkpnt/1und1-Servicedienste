@@ -65,7 +65,10 @@ class ServicedienstePlugin : Plugin<Project> {
         }
     }
 
-    private val fritzboxPhonebookStartingContactIds = listOf(10001, 20001).iterator()
+    private val fritzboxPhonebookStartingContactIds = mapOf(
+        TASK_NAME_CONVERT_DSL to 10001,
+        TASK_NAME_CONVERT_MOBILFUNK to 20001
+    )
 
     fun registerConvertTask(
         project: Project,
@@ -79,7 +82,7 @@ class ServicedienstePlugin : Plugin<Project> {
             task.pdf.set(extension.downloadTo)
             task.jsonExportFile.set(extension.jsonExportFile)
             task.fritzboxPhonebookName.set(extension.fritzboxPhonebookName)
-            task.fritzboxPhonebookStartingContactId.set(fritzboxPhonebookStartingContactIds.next())
+            task.fritzboxPhonebookStartingContactId.set(fritzboxPhonebookStartingContactIds.getOrDefault(taskName, 1))
             task.fritzboxPhonebookFile.set(extension.fritzboxPhonebookFile)
         }
     }
