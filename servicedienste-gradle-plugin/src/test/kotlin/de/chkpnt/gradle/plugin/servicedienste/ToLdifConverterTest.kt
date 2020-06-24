@@ -33,7 +33,7 @@ internal class ToLdifConverterTest {
             asOfDate = LocalDate.parse("2020-04-01"),
             phoneNumbers = listOf(
                 Servicedienst(phoneNumber = "040808081", chargedSince = LocalDate.parse("2011-05-04")),
-                Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"))
+                Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"), description = "Spam")
             )
         )
 
@@ -61,6 +61,8 @@ internal class ToLdifConverterTest {
             
             dn: ou=0694005900,dc=servicedienste,dc=1und1,dc=de
             objectClass: organizationalUnit
+            objectClass: organization
+            o: Spam
             ou: 0694005900
             telephoneNumber: 0694005900
             description: charged since 2011-05-04

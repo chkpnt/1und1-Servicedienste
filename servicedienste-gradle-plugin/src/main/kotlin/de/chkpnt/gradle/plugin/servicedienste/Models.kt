@@ -16,6 +16,8 @@
 
 package de.chkpnt.gradle.plugin.servicedienste
 
+import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.annotation.JsonInclude.Include.NON_ABSENT
 import java.time.LocalDate
 
 // 1&1 calls it "Servicedienste". Don't know an appropriate English term. :-/
@@ -24,11 +26,19 @@ data class Servicedienste(
     var sourceSha256: String? = null,
     val asOfDate: LocalDate?,
     val phoneNumbers: List<Servicedienst>
-)
+) {
+    fun addDescription(number: String, description: String) {
+        phoneNumbers.stream()
+            .filter { (phoneNumber) -> phoneNumber == number }
+            .forEach { it.description = description }
+    }
+}
 
 data class Servicedienst(
     val phoneNumber: String,
-    val chargedSince: LocalDate
+    val chargedSince: LocalDate,
+    @JsonInclude(NON_ABSENT)
+    var description: String? = null
 )
 
 fun Servicedienste.sortAndDistinct() = Servicedienste(

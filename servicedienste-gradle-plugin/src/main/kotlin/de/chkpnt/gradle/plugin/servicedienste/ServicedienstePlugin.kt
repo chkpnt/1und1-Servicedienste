@@ -28,11 +28,14 @@ class ServicedienstePlugin : Plugin<Project> {
         project.pluginManager
             .apply(BasePlugin::class.java)
 
+        var extensionKnownNumbers = project.extensions
+            .create(EXTENSION_NAME_KNOWN_NUMBERS, KnownNumbersExtension::class.java, project)
+
         // DSL
         val extensionDsl = project.extensions
             .create(EXTENSION_NAME_SERVICEDIENSTE_DSL, ServicediensteExtension::class.java, project)
         val downloadDslPdfTask = registerDownloadTask(project, TASK_NAME_DOWNLOAD_DSL_PDF, extensionDsl)
-        val convertDslTask = registerConvertTask(project, TASK_NAME_CONVERT_DSL, extensionDsl)
+        val convertDslTask = registerConvertTask(project, TASK_NAME_CONVERT_DSL, extensionDsl, extensionKnownNumbers)
         convertDslTask.configure { it.dependsOn(downloadDslPdfTask) }
 
         // Mobilfunk
@@ -40,7 +43,7 @@ class ServicedienstePlugin : Plugin<Project> {
             .create(EXTENSION_NAME_SERVICEDIENSTE_MOBILFUNK, ServicediensteExtension::class.java, project)
         val downloadDslMobilfunkTask =
             registerDownloadTask(project, TASK_NAME_DOWNLOAD_MOBILFUNK_PDF, extensionMobilfunk)
-        val convertMobilfunkTask = registerConvertTask(project, TASK_NAME_CONVERT_MOBILFUNK, extensionMobilfunk)
+        val convertMobilfunkTask = registerConvertTask(project, TASK_NAME_CONVERT_MOBILFUNK, extensionMobilfunk, extensionKnownNumbers)
         convertMobilfunkTask.configure { it.dependsOn(downloadDslMobilfunkTask) }
 
         project.tasks.register(TASK_NAME_CONVERT_ALL) { task ->
@@ -73,7 +76,8 @@ class ServicedienstePlugin : Plugin<Project> {
     fun registerConvertTask(
         project: Project,
         taskName: String,
-        extension: ServicediensteExtension
+        extension: ServicediensteExtension,
+        knownNumbersExtension: KnownNumbersExtension
     ): TaskProvider<ServicediensteConversionTask> {
         return project.tasks.register(taskName, ServicediensteConversionTask::class.java) { task ->
             task.group = GROUP_NAME_CONVERSION
@@ -86,6 +90,7 @@ class ServicedienstePlugin : Plugin<Project> {
             task.fritzboxPhonebookName.set(extension.fritzboxPhonebookName)
             task.fritzboxPhonebookStartingContactId.set(fritzboxPhonebookStartingContactIds.getOrDefault(taskName, 1))
             task.fritzboxPhonebookFile.set(extension.fritzboxPhonebookFile)
+            task.knownNumbers.set(knownNumbersExtension.knownNumbers)
         }
     }
 
@@ -102,5 +107,6 @@ class ServicedienstePlugin : Plugin<Project> {
 
         private val EXTENSION_NAME_SERVICEDIENSTE_DSL = "servicediensteDsl"
         private val EXTENSION_NAME_SERVICEDIENSTE_MOBILFUNK = "servicediensteMobilfunk"
+        private val EXTENSION_NAME_KNOWN_NUMBERS = "knownNumbers"
     }
 }

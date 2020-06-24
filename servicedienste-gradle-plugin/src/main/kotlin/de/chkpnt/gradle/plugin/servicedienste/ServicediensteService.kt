@@ -61,8 +61,8 @@ class DefaultServicediensteService : ServicediensteService {
 
     private fun addPhoneNumberTo(list: MutableList<Servicedienst>, line: String) {
         val match = chargedPhoneNumberRegex.find(line) ?: return
-        val (phoneNumber, chargedFrom) = match.destructured
-        val chargedFromDate = LocalDate.parse(chargedFrom, germanDateFormatter)
-        list.add(Servicedienst(phoneNumber, chargedFromDate))
+        val (phoneNumber, chargedSince) = match.destructured
+        val chargedSinceDate = LocalDate.parse(chargedSince, germanDateFormatter)
+        list.add(Servicedienst(phoneNumber, chargedSince = chargedSinceDate))
     }
 }

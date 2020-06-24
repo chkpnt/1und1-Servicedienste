@@ -46,12 +46,25 @@ ${contactElements.prependIndent("            ")}
 
     private fun contactElement(servicedienst: Servicedienst): String {
         val number = servicedienst.phoneNumber
-        return """
-            dn: ou=$number,dc=servicedienste,dc=1und1,dc=de
-            objectClass: organizationalUnit
-            ou: $number
-            telephoneNumber: $number
-            description: charged since ${servicedienst.chargedSince}
-            """.trimIndent()
+        val numberBelongsTo = servicedienst.description
+        if (numberBelongsTo != null) {
+            return """
+                dn: ou=$number,dc=servicedienste,dc=1und1,dc=de
+                objectClass: organizationalUnit
+                objectClass: organization
+                o: $numberBelongsTo
+                ou: $number
+                telephoneNumber: $number
+                description: charged since ${servicedienst.chargedSince}
+                """.trimIndent()
+        } else {
+            return """
+                dn: ou=$number,dc=servicedienste,dc=1und1,dc=de
+                objectClass: organizationalUnit
+                ou: $number
+                telephoneNumber: $number
+                description: charged since ${servicedienst.chargedSince}
+                """.trimIndent()
+        }
     }
 }

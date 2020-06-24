@@ -44,7 +44,7 @@ class ServicediensteConversionTaskTest {
         asOfDate = LocalDate.parse("2020-04-01"),
         phoneNumbers = listOf(
             Servicedienst(phoneNumber = "040808081", chargedSince = LocalDate.parse("2011-05-04")),
-            Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"))
+            Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"), description = "Spam")
         )
     )
 
@@ -96,7 +96,8 @@ class ServicediensteConversionTaskTest {
                 "chargedSince" : "2011-05-04"
               }, {
                 "phoneNumber" : "0694005900",
-                "chargedSince" : "2011-05-04"
+                "chargedSince" : "2011-05-04",
+                "description" : "Spam"
               } ]
             }
             """.trimIndent()
@@ -125,6 +126,8 @@ class ServicediensteConversionTaskTest {
 
             dn: ou=0694005900,dc=servicedienste,dc=1und1,dc=de
             objectClass: organizationalUnit
+            objectClass: organization
+            o: Spam
             ou: 0694005900
             telephoneNumber: 0694005900
             description: charged since 2011-05-04
@@ -153,7 +156,7 @@ class ServicediensteConversionTaskTest {
                     <contact>
                         <category>0</category>
                         <person>
-                            <realName>0694005900</realName>
+                            <realName>Spam</realName>
                         </person>
                         <telephony nid="1">
                             <number type="work" prio="1" id="0">0694005900</number>

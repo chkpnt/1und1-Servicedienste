@@ -29,6 +29,11 @@ servicediensteMobilfunk {
     fritzboxPhonebookFile("1und1-Servicedienste-Mobilfunk-FritzBox-Phonebook.xml")
 }
 
+// Only already public available data should be listed here:
+knownNumbers {
+    number("069257367300", belongsTo = "GoToMeeting")  // https://www.wemgehoert.de/nummer/069257367300
+}
+
 gitPublish {
     repoUri.set("git@github.com:chkpnt/1und1-Servicedienste.git")
     branch.set("master")

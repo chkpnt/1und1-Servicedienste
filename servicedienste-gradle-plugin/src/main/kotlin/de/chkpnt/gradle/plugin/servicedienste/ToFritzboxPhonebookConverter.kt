@@ -49,12 +49,13 @@ ${contactElements.prependIndent("                    ")}
 
     private fun contactElement(servicedienst: Servicedienst, id: Int): String {
         val number = servicedienst.phoneNumber
+        val name = servicedienst.description ?: number
         val timestamp = servicedienst.chargedSince.atStartOfDay(ZoneId.of("Europe/Berlin")).toEpochSecond()
         return """
             <contact>
                 <category>0</category>
                 <person>
-                    <realName>$number</realName>
+                    <realName>$name</realName>
                 </person>
                 <telephony nid="1">
                     <number type="work" prio="1" id="0">$number</number>

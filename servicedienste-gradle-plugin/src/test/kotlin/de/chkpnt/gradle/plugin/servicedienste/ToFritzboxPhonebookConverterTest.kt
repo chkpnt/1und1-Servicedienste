@@ -33,7 +33,7 @@ internal class ToFritzboxPhonebookConverterTest {
             asOfDate = LocalDate.parse("2020-04-01"),
             phoneNumbers = listOf(
                 Servicedienst(phoneNumber = "040808081", chargedSince = LocalDate.parse("2011-05-04")),
-                Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"))
+                Servicedienst(phoneNumber = "0694005900", chargedSince = LocalDate.parse("2011-05-04"), description = "Spam")
             )
         )
 
@@ -60,7 +60,7 @@ internal class ToFritzboxPhonebookConverterTest {
                     <contact>
                         <category>0</category>
                         <person>
-                            <realName>0694005900</realName>
+                            <realName>Spam</realName>
                         </person>
                         <telephony nid="1">
                             <number type="work" prio="1" id="0">0694005900</number>

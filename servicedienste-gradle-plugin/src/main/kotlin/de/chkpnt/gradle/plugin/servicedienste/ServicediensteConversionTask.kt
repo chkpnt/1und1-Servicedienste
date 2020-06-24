@@ -19,6 +19,7 @@ package de.chkpnt.gradle.plugin.servicedienste
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
+import com.fasterxml.jackson.module.kotlin.KotlinModule
 import java.net.URL
 import java.nio.file.FileSystem
 import java.nio.file.FileSystems
@@ -28,6 +29,7 @@ import java.nio.file.Paths
 import java.security.MessageDigest
 import org.gradle.api.DefaultTask
 import org.gradle.api.logging.LogLevel
+import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Console
 import org.gradle.api.tasks.Input
@@ -64,6 +66,9 @@ open class ServicediensteConversionTask() : DefaultTask() {
     val fritzboxPhonebookFile: Property<Path> = project.objects.property(Path::class.java)
 
     @Internal
+    val knownNumbers: MapProperty<String, String> = project.objects.mapProperty(String::class.java, String::class.java)
+
+    @Internal
     var servicediensteService: ServicediensteService = DefaultServicediensteService()
 
     @Internal
@@ -76,6 +81,7 @@ open class ServicediensteConversionTask() : DefaultTask() {
     var fs: FileSystem = FileSystems.getDefault()
 
     private val jsonMapper: ObjectMapper = ObjectMapper()
+        .registerModule(KotlinModule())
         .registerModule(JavaTimeModule())
         .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
 
@@ -99,6 +105,8 @@ open class ServicediensteConversionTask() : DefaultTask() {
         }
         servicedienste.sourceUrl = sourceUrl.get()
         servicedienste.sourceSha256 = pdfPath.sha256()
+        knownNumbers.get()
+            .forEach { servicedienste.addDescription(number = it.key, description = it.value) }
 
         val jsonExport = jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(servicedienste)
         Files.write(jsonExportFile.get(), jsonExport.toByteArray())
