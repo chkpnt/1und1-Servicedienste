@@ -21882,6 +21882,8 @@ description: charged since 2017-10-02
 
 dn: ou=069257367300,dc=servicedienste,dc=1und1,dc=de
 objectClass: organizationalUnit
+objectClass: organization
+o: GoToMeeting
 ou: 069257367300
 telephoneNumber: 069257367300
 description: charged since 2015-06-02

@@ -10939,7 +10939,8 @@
     "chargedSince" : "2017-10-02"
   }, {
     "phoneNumber" : "069257367300",
-    "chargedSince" : "2015-06-02"
+    "chargedSince" : "2015-06-02",
+    "description" : "GoToMeeting"
   }, {
     "phoneNumber" : "069257367301",
     "chargedSince" : "2015-06-02"
