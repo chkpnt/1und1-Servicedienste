@@ -52,6 +52,12 @@ open class ServicediensteConversionTask() : DefaultTask() {
     val fritzboxPhonebookName: Property<String> = project.objects.property(String::class.java)
 
     @Input
+    val ldapOrganizationalUnitName: Property<String> = project.objects.property(String::class.java)
+
+    @OutputFile
+    val ldapLdifFile: Property<Path> = project.objects.property(Path::class.java)
+
+    @Input
     val fritzboxPhonebookStartingContactId: Property<Int> = project.objects.property(Int::class.java)
 
     @OutputFile
@@ -59,6 +65,9 @@ open class ServicediensteConversionTask() : DefaultTask() {
 
     @Internal
     var servicediensteService: ServicediensteService = DefaultServicediensteService()
+
+    @Internal
+    var toLdifConverter: ToLdifConverter = ToLdifConverter()
 
     @Internal
     var toFritzboxPhonebookConverter: ToFritzboxPhonebookConverter = ToFritzboxPhonebookConverter()
@@ -102,6 +111,10 @@ open class ServicediensteConversionTask() : DefaultTask() {
         )
         Files.write(fritzboxPhonebookFile.get(), fritzboxPhonebook.toByteArray())
         project.logger.log(LogLevel.QUIET, "Generated ${fritzboxPhonebookFile.get()}")
+
+        val ldif = toLdifConverter.convert(servicedienste, ldapOrganizationalUnitName.get())
+        Files.write(ldapLdifFile.get(), ldif.toByteArray(Charsets.US_ASCII))
+        project.logger.log(LogLevel.QUIET, "Generated ${ldapLdifFile.get()}")
     }
 }
 

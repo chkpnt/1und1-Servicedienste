@@ -81,6 +81,8 @@ class ServicedienstePlugin : Plugin<Project> {
             task.sourceUrl.set(extension.sourceUrl)
             task.pdf.set(extension.downloadTo)
             task.jsonExportFile.set(extension.jsonExportFile)
+            task.ldapOrganizationalUnitName.set(extension.ldapOrganizationalUnitName)
+            task.ldapLdifFile.set(extension.ldapLdifFile)
             task.fritzboxPhonebookName.set(extension.fritzboxPhonebookName)
             task.fritzboxPhonebookStartingContactId.set(fritzboxPhonebookStartingContactIds.getOrDefault(taskName, 1))
             task.fritzboxPhonebookFile.set(extension.fritzboxPhonebookFile)

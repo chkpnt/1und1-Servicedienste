@@ -27,6 +27,8 @@ open class ServicediensteExtension(private val project: Project) {
     internal val sourceUrl: Property<String> = project.objects.property(String::class.java)
     internal val downloadTo: Property<Path> = project.objects.property(Path::class.java)
     internal val jsonExportFile: Property<Path> = project.objects.property(Path::class.java)
+    internal val ldapOrganizationalUnitName: Property<String> = project.objects.property(String::class.java)
+    internal val ldapLdifFile: Property<Path> = project.objects.property(Path::class.java)
     internal val fritzboxPhonebookName: Property<String> = project.objects.property(String::class.java)
     internal val fritzboxPhonebookFile: Property<Path> = project.objects.property(Path::class.java)
 
@@ -35,6 +37,8 @@ open class ServicediensteExtension(private val project: Project) {
     fun sourceUrl(value: String) = sourceUrl.set(value)
     fun downloadTo(value: String) = downloadTo.set(value.toPath())
     fun jsonExportFile(value: String) = jsonExportFile.set(value.toPath())
+    fun ldapOrganizationalUnitName(value: String) = ldapOrganizationalUnitName.set(value)
+    fun ldapLdifFile(value: String) = ldapLdifFile.set(value.toPath())
     fun fritzboxPhonebookName(value: String) = fritzboxPhonebookName.set(value)
     fun fritzboxPhonebookFile(value: String) = fritzboxPhonebookFile.set(value.toPath())
 

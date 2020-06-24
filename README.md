@@ -18,7 +18,11 @@ Therefore, this repository exists to provide machine-readable versions of these 
 * [1und1-Servicedienste-DSL.json](1und1-Servicedienste-DSL.json)
 * [1und1-Servicedienste-Mobilfunk.json](1und1-Servicedienste-Mobilfunk.json)
 
-All files are updated automatically.
+Some LDIF-files for your LDAP-directory are generated, too:
+* [1und1-Servicedienste-DSL.ldif](1und1-Servicedienste-DSL.ldif)
+* [1und1-Servicedienste-Mobilfunk.ldif](1und1-Servicedienste-Mobilfunk.ldif)
+
+All files are updated automatically by a schedules GitHub workflow.
 
 ## FRITZ!Box Phonebooks 
 
