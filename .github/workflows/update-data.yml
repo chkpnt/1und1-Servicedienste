@@ -27,14 +27,14 @@ jobs:
           git config --global user.name "chkpnt CI"
           git config --global user.email "chkpnt-ci@chkpnt.de"
 
-      - uses: webfactory/ssh-agent@ignore-kill-agent-failure
+      - uses: webfactory/ssh-agent@v0.4.0
         with:
           ssh-private-key: ${{ secrets.WORKFLOW_SSH_KEY }}
       - name: Push data, if there are any changes
         run: ./gradlew gitPublishPush --info
       - run: kill $SSH_AGENT_PID
 
-      - uses: webfactory/ssh-agent@ignore-kill-agent-failure
+      - uses: webfactory/ssh-agent@v0.4.0
         with:
           ssh-private-key: ${{ secrets.WORKFLOW_SSH_KEY_ARCHIV_REPO }}
       - name: Archive the PDFs and build artifacts in a private repo
