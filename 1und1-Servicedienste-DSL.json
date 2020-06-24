@@ -18,12 +18,6 @@
     "phoneNumber" : "020154599800",
     "chargedSince" : "2014-09-15"
   }, {
-    "phoneNumber" : "020154599800",
-    "chargedSince" : "2014-11-25"
-  }, {
-    "phoneNumber" : "020154599800",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "020155890097",
     "chargedSince" : "2012-09-27"
   }, {
@@ -270,9 +264,6 @@
     "phoneNumber" : "020243047619430",
     "chargedSince" : "2015-10-30"
   }, {
-    "phoneNumber" : "020243047619430",
-    "chargedSince" : "2015-12-30"
-  }, {
     "phoneNumber" : "02024304771038",
     "chargedSince" : "2014-05-30"
   }, {
@@ -422,9 +413,6 @@
   }, {
     "phoneNumber" : "02029711947092",
     "chargedSince" : "2014-01-06"
-  }, {
-    "phoneNumber" : "02029711947206",
-    "chargedSince" : "2016-09-30"
   }, {
     "phoneNumber" : "02029711947206",
     "chargedSince" : "2016-09-30"
@@ -666,9 +654,6 @@
     "phoneNumber" : "020589173812",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "020589173812",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "020589173813",
     "chargedSince" : "2017-08-01"
   }, {
@@ -689,9 +674,6 @@
   }, {
     "phoneNumber" : "020589173885",
     "chargedSince" : "2018-02-05"
-  }, {
-    "phoneNumber" : "020589173892",
-    "chargedSince" : "2018-06-04"
   }, {
     "phoneNumber" : "020589173892",
     "chargedSince" : "2018-06-04"
@@ -719,9 +701,6 @@
   }, {
     "phoneNumber" : "020589759034460",
     "chargedSince" : "2014-01-31"
-  }, {
-    "phoneNumber" : "020589759034460",
-    "chargedSince" : "2014-03-28"
   }, {
     "phoneNumber" : "0205897594250",
     "chargedSince" : "2014-01-31"
@@ -809,9 +788,6 @@
   }, {
     "phoneNumber" : "020988294219330",
     "chargedSince" : "2013-10-21"
-  }, {
-    "phoneNumber" : "020988294219330",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "0209882942193300",
     "chargedSince" : "2017-08-01"
@@ -939,9 +915,6 @@
     "phoneNumber" : "020995509304",
     "chargedSince" : "2014-07-15"
   }, {
-    "phoneNumber" : "020995509304",
-    "chargedSince" : "2014-09-15"
-  }, {
     "phoneNumber" : "020995509305",
     "chargedSince" : "2014-09-15"
   }, {
@@ -949,12 +922,6 @@
     "chargedSince" : "2014-09-15"
   }, {
     "phoneNumber" : "020995509307",
-    "chargedSince" : "2014-11-25"
-  }, {
-    "phoneNumber" : "020995509307",
-    "chargedSince" : "2014-11-25"
-  }, {
-    "phoneNumber" : "020995509308",
     "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "020995509308",
@@ -1113,9 +1080,6 @@
     "phoneNumber" : "02102537415208",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "02102537415208",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "021025374153000",
     "chargedSince" : "2019-01-03"
   }, {
@@ -1124,9 +1088,6 @@
   }, {
     "phoneNumber" : "021028984501",
     "chargedSince" : "2014-07-15"
-  }, {
-    "phoneNumber" : "021028984551",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "021028984551",
     "chargedSince" : "2014-11-25"
@@ -1764,9 +1725,6 @@
     "phoneNumber" : "02212920064532",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "02212920064532",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "02212920065519",
     "chargedSince" : "2015-09-25"
   }, {
@@ -1884,9 +1842,6 @@
     "phoneNumber" : "02212921016309",
     "chargedSince" : "2014-11-25"
   }, {
-    "phoneNumber" : "02212921016309",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "02212921016327",
     "chargedSince" : "2014-05-30"
   }, {
@@ -1934,9 +1889,6 @@
   }, {
     "phoneNumber" : "02212921016463",
     "chargedSince" : "2014-05-30"
-  }, {
-    "phoneNumber" : "02212921016466",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "02212921016466",
     "chargedSince" : "2014-11-25"
@@ -2145,9 +2097,6 @@
     "phoneNumber" : "02212921017068",
     "chargedSince" : "2014-11-25"
   }, {
-    "phoneNumber" : "02212921017068",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "02212921017071",
     "chargedSince" : "2014-11-25"
   }, {
@@ -2250,9 +2199,6 @@
     "phoneNumber" : "02212921017433",
     "chargedSince" : "2014-11-25"
   }, {
-    "phoneNumber" : "02212921017433",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "02212921017434",
     "chargedSince" : "2015-02-10"
   }, {
@@ -2286,23 +2232,14 @@
     "phoneNumber" : "02212921017497",
     "chargedSince" : "2014-07-15"
   }, {
-    "phoneNumber" : "02212921017497",
-    "chargedSince" : "2014-09-15"
-  }, {
     "phoneNumber" : "02212921017503",
     "chargedSince" : "2014-05-30"
   }, {
     "phoneNumber" : "02212921017510",
     "chargedSince" : "2014-07-15"
   }, {
-    "phoneNumber" : "02212921017510",
-    "chargedSince" : "2014-09-15"
-  }, {
     "phoneNumber" : "02212921017519",
     "chargedSince" : "2014-05-30"
-  }, {
-    "phoneNumber" : "02212921017520",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "02212921017520",
     "chargedSince" : "2014-11-25"
@@ -2360,9 +2297,6 @@
   }, {
     "phoneNumber" : "02212921017698",
     "chargedSince" : "2014-07-15"
-  }, {
-    "phoneNumber" : "02212921017710",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "02212921017710",
     "chargedSince" : "2014-11-25"
@@ -2589,9 +2523,6 @@
     "phoneNumber" : "022157144129260",
     "chargedSince" : "2014-03-28"
   }, {
-    "phoneNumber" : "022157144129260",
-    "chargedSince" : "2017-10-02"
-  }, {
     "phoneNumber" : "0221571441297",
     "chargedSince" : "2019-01-03"
   }, {
@@ -2738,9 +2669,6 @@
   }, {
     "phoneNumber" : "022198203020000",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "022198203020000",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "02219820302210",
     "chargedSince" : "2014-09-15"
@@ -2948,9 +2876,6 @@
   }, {
     "phoneNumber" : "022198203421",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "022198203421",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "022198203423",
     "chargedSince" : "2016-03-01"
@@ -3258,9 +3183,6 @@
     "phoneNumber" : "0231583936452000",
     "chargedSince" : "2018-06-04"
   }, {
-    "phoneNumber" : "0231583936452000",
-    "chargedSince" : "2018-06-04"
-  }, {
     "phoneNumber" : "0231583936500",
     "chargedSince" : "2014-11-25"
   }, {
@@ -3561,9 +3483,6 @@
     "phoneNumber" : "026229749902",
     "chargedSince" : "2016-05-02"
   }, {
-    "phoneNumber" : "026229749902",
-    "chargedSince" : "2016-05-02"
-  }, {
     "phoneNumber" : "026376039901",
     "chargedSince" : "2014-03-28"
   }, {
@@ -3720,17 +3639,11 @@
     "phoneNumber" : "03022039011",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "03022039011",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "030220390111",
     "chargedSince" : "2012-09-27"
   }, {
     "phoneNumber" : "0302203904",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "0302203904",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03022039049",
     "chargedSince" : "2017-09-05"
@@ -3974,9 +3887,6 @@
   }, {
     "phoneNumber" : "03025558418919",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03025558418919",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03025558418926",
     "chargedSince" : "2017-05-19"
@@ -4464,9 +4374,6 @@
     "phoneNumber" : "03031198236",
     "chargedSince" : "2018-06-04"
   }, {
-    "phoneNumber" : "03031198236",
-    "chargedSince" : "2018-06-04"
-  }, {
     "phoneNumber" : "03031879672",
     "chargedSince" : "2017-01-13"
   }, {
@@ -4487,9 +4394,6 @@
   }, {
     "phoneNumber" : "03031879732",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03031879732",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03031879734",
     "chargedSince" : "2017-10-02"
@@ -4591,9 +4495,6 @@
     "chargedSince" : "2014-05-30"
   }, {
     "phoneNumber" : "03034649843",
-    "chargedSince" : "2014-11-25"
-  }, {
-    "phoneNumber" : "03034649844",
     "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "03034649844",
@@ -5355,9 +5256,6 @@
     "phoneNumber" : "030868757757",
     "chargedSince" : "2012-09-27"
   }, {
-    "phoneNumber" : "030868757757",
-    "chargedSince" : "2019-12-05"
-  }, {
     "phoneNumber" : "03088789320",
     "chargedSince" : "2011-05-04"
   }, {
@@ -5459,9 +5357,6 @@
   }, {
     "phoneNumber" : "0309203994021",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "0309203994021",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "0309203994023",
     "chargedSince" : "2014-07-15"
@@ -5598,26 +5493,14 @@
     "phoneNumber" : "03096539540915",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "03096539540915",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "03096539540948",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03096539540948",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03096539540965",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "03096539540965",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "03096539541939",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03096539541939",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03096539541958",
     "chargedSince" : "2017-05-19"
@@ -5631,17 +5514,11 @@
     "phoneNumber" : "03096539542078",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "03096539542078",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "03096539542099",
     "chargedSince" : "2017-05-19"
   }, {
     "phoneNumber" : "03096539542119",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03096539542119",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03096539542152",
     "chargedSince" : "2017-05-19"
@@ -5661,9 +5538,6 @@
     "phoneNumber" : "03096539542279",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "03096539542279",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "03096539542287",
     "chargedSince" : "2017-05-19"
   }, {
@@ -5678,9 +5552,6 @@
   }, {
     "phoneNumber" : "03096539542493",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03096539542493",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03096539542548",
     "chargedSince" : "2017-04-01"
@@ -5736,9 +5607,6 @@
     "phoneNumber" : "03096539543108",
     "chargedSince" : "2016-12-02"
   }, {
-    "phoneNumber" : "03096539543108",
-    "chargedSince" : "2016-12-02"
-  }, {
     "phoneNumber" : "03096539543118",
     "chargedSince" : "2016-12-02"
   }, {
@@ -5749,9 +5617,6 @@
     "chargedSince" : "2016-12-02"
   }, {
     "phoneNumber" : "03096539543172",
-    "chargedSince" : "2016-12-02"
-  }, {
-    "phoneNumber" : "03096539543174",
     "chargedSince" : "2016-12-02"
   }, {
     "phoneNumber" : "03096539543174",
@@ -5785,12 +5650,6 @@
     "chargedSince" : "2017-04-01"
   }, {
     "phoneNumber" : "03096539543704",
-    "chargedSince" : "2017-04-01"
-  }, {
-    "phoneNumber" : "03096539543704",
-    "chargedSince" : "2017-04-01"
-  }, {
-    "phoneNumber" : "03096539543745",
     "chargedSince" : "2017-04-01"
   }, {
     "phoneNumber" : "03096539543745",
@@ -5868,9 +5727,6 @@
     "phoneNumber" : "03096539545124",
     "chargedSince" : "2016-01-29"
   }, {
-    "phoneNumber" : "03096539545124",
-    "chargedSince" : "2016-01-29"
-  }, {
     "phoneNumber" : "03096539545140",
     "chargedSince" : "2016-01-29"
   }, {
@@ -5883,19 +5739,10 @@
     "phoneNumber" : "03096539545241",
     "chargedSince" : "2016-01-29"
   }, {
-    "phoneNumber" : "03096539545241",
-    "chargedSince" : "2016-01-29"
-  }, {
-    "phoneNumber" : "03096539545243",
-    "chargedSince" : "2016-01-29"
-  }, {
     "phoneNumber" : "03096539545243",
     "chargedSince" : "2016-01-29"
   }, {
     "phoneNumber" : "03096539545270",
-    "chargedSince" : "2016-01-29"
-  }, {
-    "phoneNumber" : "03096539545295",
     "chargedSince" : "2016-01-29"
   }, {
     "phoneNumber" : "03096539545295",
@@ -6669,9 +6516,6 @@
     "phoneNumber" : "03096539596968",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "03096539596968",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "03096539596997",
     "chargedSince" : "2017-05-19"
   }, {
@@ -6680,9 +6524,6 @@
   }, {
     "phoneNumber" : "03096539597948",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "03096539597948",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "03096539597991",
     "chargedSince" : "2017-10-02"
@@ -7683,12 +7524,6 @@
     "phoneNumber" : "04023527367",
     "chargedSince" : "2014-09-15"
   }, {
-    "phoneNumber" : "04023527367",
-    "chargedSince" : "2014-11-25"
-  }, {
-    "phoneNumber" : "04023527367",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "04023527369",
     "chargedSince" : "2014-09-15"
   }, {
@@ -7938,9 +7773,6 @@
     "phoneNumber" : "04023527600",
     "chargedSince" : "2017-04-01"
   }, {
-    "phoneNumber" : "04023527600",
-    "chargedSince" : "2017-04-01"
-  }, {
     "phoneNumber" : "04023527601",
     "chargedSince" : "2016-08-08"
   }, {
@@ -7955,9 +7787,6 @@
   }, {
     "phoneNumber" : "04023527608",
     "chargedSince" : "2017-04-01"
-  }, {
-    "phoneNumber" : "04023527611",
-    "chargedSince" : "2016-09-30"
   }, {
     "phoneNumber" : "04023527611",
     "chargedSince" : "2016-09-30"
@@ -8039,9 +7868,6 @@
   }, {
     "phoneNumber" : "040299980206910",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "040299980206910",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "0402999802069100",
     "chargedSince" : "2015-08-03"
@@ -8214,9 +8040,6 @@
     "phoneNumber" : "040299993341",
     "chargedSince" : "2014-11-25"
   }, {
-    "phoneNumber" : "040299993341",
-    "chargedSince" : "2015-01-23"
-  }, {
     "phoneNumber" : "040299993365",
     "chargedSince" : "2015-02-10"
   }, {
@@ -8316,9 +8139,6 @@
     "phoneNumber" : "04046894943597",
     "chargedSince" : "2019-12-05"
   }, {
-    "phoneNumber" : "04046894943597",
-    "chargedSince" : "2019-12-05"
-  }, {
     "phoneNumber" : "04046894943737",
     "chargedSince" : "2019-12-05"
   }, {
@@ -8376,14 +8196,8 @@
     "phoneNumber" : "04046899105855",
     "chargedSince" : "2014-09-15"
   }, {
-    "phoneNumber" : "04046899105855",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "04046899105888",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "04046899105888",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "04046899108185",
     "chargedSince" : "2017-05-19"
@@ -8447,9 +8261,6 @@
   }, {
     "phoneNumber" : "04046899110753",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "04046899110753",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "04046899110913",
     "chargedSince" : "2014-11-25"
@@ -8685,9 +8496,6 @@
     "phoneNumber" : "04080808017",
     "chargedSince" : "2014-09-15"
   }, {
-    "phoneNumber" : "04080808017",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "0408080801996",
     "chargedSince" : "2014-07-15"
   }, {
@@ -8735,9 +8543,6 @@
   }, {
     "phoneNumber" : "040808080801690",
     "chargedSince" : "2014-01-06"
-  }, {
-    "phoneNumber" : "040808080801690",
-    "chargedSince" : "2014-07-15"
   }, {
     "phoneNumber" : "0408080808080",
     "chargedSince" : "2013-08-30"
@@ -9147,9 +8952,6 @@
     "phoneNumber" : "044019159513",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "044019159513",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "044199839164",
     "chargedSince" : "2017-04-01"
   }, {
@@ -9285,26 +9087,14 @@
     "phoneNumber" : "0511885092114",
     "chargedSince" : "2018-02-05"
   }, {
-    "phoneNumber" : "0511885092114",
-    "chargedSince" : "2018-02-05"
-  }, {
     "phoneNumber" : "0511885092145",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "0511885092145",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "0511885092288",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "0511885092288",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "0511885092331",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "0511885092331",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "0511885092365",
     "chargedSince" : "2017-11-16"
@@ -9792,9 +9582,6 @@
     "phoneNumber" : "05618794431180",
     "chargedSince" : "2016-09-30"
   }, {
-    "phoneNumber" : "05618794431180",
-    "chargedSince" : "2016-09-30"
-  }, {
     "phoneNumber" : "05618794439004",
     "chargedSince" : "2019-12-05"
   }, {
@@ -9812,9 +9599,6 @@
   }, {
     "phoneNumber" : "05618794439089",
     "chargedSince" : "2013-10-21"
-  }, {
-    "phoneNumber" : "05618794439090",
-    "chargedSince" : "2016-09-30"
   }, {
     "phoneNumber" : "05618794439090",
     "chargedSince" : "2016-09-30"
@@ -9975,9 +9759,6 @@
     "phoneNumber" : "06151627325728",
     "chargedSince" : "2014-09-15"
   }, {
-    "phoneNumber" : "06151627325728",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "06151627326903",
     "chargedSince" : "2014-11-25"
   }, {
@@ -10109,9 +9890,6 @@
   }, {
     "phoneNumber" : "06217800534",
     "chargedSince" : "2014-01-06"
-  }, {
-    "phoneNumber" : "06217800675",
-    "chargedSince" : "2011-05-04"
   }, {
     "phoneNumber" : "06217800675",
     "chargedSince" : "2011-05-04"
@@ -10274,9 +10052,6 @@
   }, {
     "phoneNumber" : "066141081737",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "066141081737",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "066219112744",
     "chargedSince" : "2015-07-02"
@@ -10452,9 +10227,6 @@
     "phoneNumber" : "06912006703",
     "chargedSince" : "2017-05-19"
   }, {
-    "phoneNumber" : "06912006703",
-    "chargedSince" : "2017-06-09"
-  }, {
     "phoneNumber" : "06912006704",
     "chargedSince" : "2017-04-01"
   }, {
@@ -10571,9 +10343,6 @@
   }, {
     "phoneNumber" : "06912009804805",
     "chargedSince" : "2017-05-19"
-  }, {
-    "phoneNumber" : "06912009804805",
-    "chargedSince" : "2017-06-09"
   }, {
     "phoneNumber" : "06912009806318",
     "chargedSince" : "2014-01-31"
@@ -10833,9 +10602,6 @@
     "phoneNumber" : "069222228476",
     "chargedSince" : "2016-01-29"
   }, {
-    "phoneNumber" : "069222228476",
-    "chargedSince" : "2016-01-29"
-  }, {
     "phoneNumber" : "069222228479",
     "chargedSince" : "2016-07-08"
   }, {
@@ -10934,9 +10700,6 @@
   }, {
     "phoneNumber" : "06922227969",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "06922227996",
-    "chargedSince" : "2016-07-08"
   }, {
     "phoneNumber" : "06922227996",
     "chargedSince" : "2016-07-08"
@@ -11046,9 +10809,6 @@
     "phoneNumber" : "06924755711665",
     "chargedSince" : "2016-01-29"
   }, {
-    "phoneNumber" : "06924755711665",
-    "chargedSince" : "2016-01-29"
-  }, {
     "phoneNumber" : "06924755711737",
     "chargedSince" : "2016-01-29"
   }, {
@@ -11118,9 +10878,6 @@
     "phoneNumber" : "06924755713983",
     "chargedSince" : "2016-05-02"
   }, {
-    "phoneNumber" : "06924755713983",
-    "chargedSince" : "2016-05-02"
-  }, {
     "phoneNumber" : "06924755713996",
     "chargedSince" : "2016-05-02"
   }, {
@@ -11153,9 +10910,6 @@
   }, {
     "phoneNumber" : "069255114400",
     "chargedSince" : "2013-01-29"
-  }, {
-    "phoneNumber" : "069255114400",
-    "chargedSince" : "2019-12-05"
   }, {
     "phoneNumber" : "069255114402",
     "chargedSince" : "2017-10-02"
@@ -11940,9 +11694,6 @@
     "phoneNumber" : "06990150785",
     "chargedSince" : "2014-11-25"
   }, {
-    "phoneNumber" : "06990150785",
-    "chargedSince" : "2014-11-25"
-  }, {
     "phoneNumber" : "06990150788",
     "chargedSince" : "2016-01-29"
   }, {
@@ -12434,9 +12185,6 @@
   }, {
     "phoneNumber" : "07119247156",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "07119247156",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "07119247157",
     "chargedSince" : "2012-09-27"
@@ -13131,9 +12879,6 @@
     "phoneNumber" : "089122090011820",
     "chargedSince" : "2013-10-21"
   }, {
-    "phoneNumber" : "089122090011820",
-    "chargedSince" : "2014-05-30"
-  }, {
     "phoneNumber" : "08912221821",
     "chargedSince" : "2014-03-28"
   }, {
@@ -13246,9 +12991,6 @@
     "chargedSince" : "2015-10-30"
   }, {
     "phoneNumber" : "089143771115",
-    "chargedSince" : "2016-01-29"
-  }, {
-    "phoneNumber" : "089143771142",
     "chargedSince" : "2016-01-29"
   }, {
     "phoneNumber" : "089143771142",
@@ -14291,9 +14033,6 @@
   }, {
     "phoneNumber" : "08924889234",
     "chargedSince" : "2014-09-15"
-  }, {
-    "phoneNumber" : "08924889234",
-    "chargedSince" : "2014-11-25"
   }, {
     "phoneNumber" : "08924889235",
     "chargedSince" : "2014-11-25"
