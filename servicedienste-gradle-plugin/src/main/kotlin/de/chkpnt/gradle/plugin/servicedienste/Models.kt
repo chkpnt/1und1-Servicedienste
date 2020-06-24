@@ -30,3 +30,12 @@ data class Servicedienst(
     val phoneNumber: String,
     val chargedSince: LocalDate
 )
+
+fun Servicedienste.sortAndDistinct() = Servicedienste(
+    sourceUrl = this.sourceUrl,
+    sourceSha256 = this.sourceSha256,
+    asOfDate = this.asOfDate,
+    phoneNumbers = phoneNumbers
+        .sortedWith(compareBy(Servicedienst::phoneNumber, Servicedienst::chargedSince))
+        .distinctBy(Servicedienst::phoneNumber)
+)

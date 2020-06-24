@@ -81,6 +81,7 @@ open class ServicediensteConversionTask() : DefaultTask() {
     fun convert() {
         val pdfPath = pdf.get()
         var servicedienste = servicediensteService.loadPdf(pdfPath)
+            .sortAndDistinct()
         if (servicedienste.phoneNumbers.isEmpty()) {
             throw TaskExecutionException(
                 this,

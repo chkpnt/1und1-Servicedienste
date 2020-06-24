@@ -41,7 +41,7 @@ class ServicediensteServiceTest {
 
         assertThat(servicedienste.asOfDate).isEqualTo(LocalDate.parse("2020-05-11"))
         assertThat(servicedienste.phoneNumbers).hasSize(4935)
-        assertThat(servicedienste.phoneNumbers.first()).isEqualTo(Servicedienst("020125879359", LocalDate.parse("2012-09-27")))
-        assertThat(servicedienste.phoneNumbers.last()).isEqualTo(Servicedienst("097793273030", LocalDate.parse("2014-03-28")))
+        assertThat(servicedienste.phoneNumbers.first()).isEqualTo(Servicedienst("040808081", LocalDate.parse("2011-05-04")))
+        assertThat(servicedienste.phoneNumbers.last()).isEqualTo(Servicedienst("03030809006", LocalDate.parse("2020-05-11")))
     }
 }

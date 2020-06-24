@@ -49,10 +49,7 @@ class DefaultServicediensteService : ServicediensteService {
                 addPhoneNumberTo(phoneNumbers, line)
             }
 
-            return Servicedienste(
-                    asOfDate = asOfDate,
-                    phoneNumbers = phoneNumbers.sortedBy { it.phoneNumber }
-            )
+            return Servicedienste(asOfDate = asOfDate, phoneNumbers = phoneNumbers)
         }
     }
 
