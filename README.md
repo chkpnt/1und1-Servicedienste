@@ -22,7 +22,7 @@ Some LDIF-files for your LDAP-directory are generated, too:
 * [1und1-Servicedienste-DSL.ldif](1und1/1und1-Servicedienste-DSL.ldif)
 * [1und1-Servicedienste-Mobilfunk.ldif](1und1/1und1-Servicedienste-Mobilfunk.ldif)
 
-All files are updated automatically by a schedules GitHub workflow.
+All files are updated automatically by a scheduled GitHub workflow.
 
 ## FRITZ!Box Phonebooks 
 
@@ -30,9 +30,9 @@ Phonebook-XMLs are generated, too:
 * [1und1-Servicedienste-DSL-FritzBox-Phonebook.xml](1und1/1und1-Servicedienste-DSL-FritzBox-Phonebook.xml)
 * [1und1-Servicedienste-Mobilfunk-FritzBox-Phonebook.xml](1und1/1und1-Servicedienste-Mobilfunk-FritzBox-Phonebook.xml)
 
-Unfortunately, they are rather useless for two reasons:
+Unfortunately, they are currently rather useless for two reasons:
 1. The Phonebook-XMLs contains too many contacts. For example on a FRITZ!Box 7590, a phonebook can contain at most 2000 entries.
-1. Even if you could import the XML: A phonebook can only be used to block incoming calls, but not outgoing call.
+1. Even if you could import the XML: A phonebook can only be used to block incoming calls, but not outgoing calls.
 
 ## License
 
