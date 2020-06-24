@@ -40,5 +40,6 @@ gitPublish {
             include("1und1-Servicedienste-*.ldif")
             include("1und1-Servicedienste-*.xml")
         }
+        into("1und1")
     }
 }
