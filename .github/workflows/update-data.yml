@@ -1,11 +1,11 @@
 name: auto-updating data
 
-on:
-  push:
-    branches:
-      - master
-  schedule:
-    - cron: "0 18 * * *"
+#on:
+#  push:
+#    branches:
+#      - master
+#  schedule:
+#    - cron: "0 18 * * *"
 
 jobs:
   update-data:

@@ -1,3 +1,6 @@
+> **NOTE:** This project is now obsolete, as of 16th July 2020, 1&1 has abandoned its behaviour:<br>
+> <a href=".github/obsolete.png"><img src=".github/obsolete.png" height="100px"></a>
+
 # 1&1 Servicedienste
 <!-- markdown-link-check-disable -->
 [![License](https://img.shields.io/github/license/chkpnt/1und1-Servicedienste.svg?label=License)](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) 
