@@ -1,6 +1,6 @@
 plugins {
     id("de.chkpnt.servicedienste")
-    id("org.ajoberstar.git-publish") version "2.1.3"
+    id("org.ajoberstar.git-publish") version "3.0.0"
 }
 
 servicediensteDsl {
